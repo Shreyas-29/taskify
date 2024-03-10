@@ -1,0 +1,6 @@
+.text-top {
+  text-align: start;
+  vertical-align: top;
+  align-items: flex-start;
+  background: #000;
+}
