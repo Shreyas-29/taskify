@@ -14,7 +14,23 @@ Taskify is task management application built with [React Native](https://reactna
 
 ## Screenshots
 
-<!-- Add screenshots of your app here -->
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+  <img src="https://github.com/Shreyas-29/taskify/assets/111555846/d03f74a5-1bef-4025-b536-3fe80c143a82" alt="signin" style="width: 320px; height: 500px;">
+  <img src="https://github.com/Shreyas-29/taskify/assets/111555846/005d8b76-02e2-4825-95c5-02f1d5d5919f" alt="signup" style="width: 320px; height: 500px;">
+  <img src="https://github.com/Shreyas-29/taskify/assets/111555846/25716474-4b2c-4a10-8eb9-b90eae4d4a8b" alt="home" style="width: 320px; height: 500px;">
+  <!-- Add more images here -->
+</div>
+
+![signin](https://github.com/Shreyas-29/taskify/assets/111555846/d03f74a5-1bef-4025-b536-3fe80c143a82)
+![signup](https://github.com/Shreyas-29/taskify/assets/111555846/005d8b76-02e2-4825-95c5-02f1d5d5919f)
+![home](https://github.com/Shreyas-29/taskify/assets/111555846/25716474-4b2c-4a10-8eb9-b90eae4d4a8b)
+![completed](https://github.com/Shreyas-29/taskify/assets/111555846/7bbdcf9f-22b0-4ddb-b503-82f816b1c79d)
+![add-task](https://github.com/Shreyas-29/taskify/assets/111555846/272a8285-ee16-4055-b6b8-6165a593dc06)
+![profile](https://github.com/Shreyas-29/taskify/assets/111555846/cc45357a-1779-4fee-ab2f-865568cf3d0a)
+![search](https://github.com/Shreyas-29/taskify/assets/111555846/ac728561-e4da-430c-a91a-fe029e37728b)
+![notification](https://github.com/Shreyas-29/taskify/assets/111555846/16eba37c-4bb5-4c8c-9c7b-07310597c0de)
+![details](https://github.com/Shreyas-29/taskify/assets/111555846/d31af051-2adf-483e-a958-e58a6ee1890a)
+
 
 ## Installation
 
