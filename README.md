@@ -40,7 +40,16 @@ To run the Taskify app locally, follow these steps:
     npm install
    ```
 
-3. Configure Appwrite
+3. Configure Tailwind CSS [Nativewind](https://www.nativewind.dev/quick-starts/expo)
+   - Use ```tailwindcss@3.3.2``` this version of tailwindcss with nativewind guide
+   - Create ```my-app.d.ts``` file and add this code:
+
+      ```
+     /// <reference types="nativewind/types" />
+     ```
+     This step is mandatory to use the ```className``` prop in native components.
+   
+4. Configure Appwrite
 
    - Create an account on [Appwrite](https://appwrite.io/).
    - Create a new project and add a database to it.
@@ -55,7 +64,7 @@ To run the Taskify app locally, follow these steps:
      - Read and Write on the user collection
    - Copy the API endpoint and the API key and replace the placeholders in the `src/lib/appwrite.ts` file with your own values.
 
-4. Start the app:
+5. Start the app:
 
    ```
     npm start
