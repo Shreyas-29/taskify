@@ -22,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/icons/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.shreyas29.Taskify"
     },
     "web": {
       "bundler": "metro",
@@ -34,6 +35,20 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "cc19fba0-64d1-4ee6-9ff3-ed769db676ff"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/cc19fba0-64d1-4ee6-9ff3-ed769db676ff"
     }
   }
 }
