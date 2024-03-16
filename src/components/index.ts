@@ -1,6 +1,11 @@
 import Header from "./Header";
 import Tabs from "./Tabs";
 import AddButton from "./AddButton";
+import Loader from "./Loader";
+import TextLoader from "./TextLoader";
+import Item from "./Item";
+import Priority from "./Priority";
+import SearchItem from "./SearchItem";
 
 import Today from "./tabs/Today";
 import Upcoming from "./tabs/Upcoming";
@@ -13,5 +18,10 @@ export {
     AddButton,
     Today,
     Upcoming,
-    Completed
+    Completed,
+    Loader,
+    TextLoader,
+    Item,
+    Priority,
+    SearchItem
 }

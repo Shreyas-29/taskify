@@ -1,16 +1,15 @@
-import { View, Text, TouchableOpacity, Animated as RNAnimated, StyleSheet, Image, Dimensions, NativeSyntheticEvent, LayoutChangeEvent, } from 'react-native'
-import React, { useState, useRef } from "react";
 import { cn } from '@/lib/utils';
-import Animated, { SharedTransition, useSharedValue, withSpring } from 'react-native-reanimated';
+import React, { useState } from "react";
+import { Text, TouchableOpacity, View } from 'react-native';
+import Completed from './tabs/Completed';
 import Today from './tabs/Today';
 import Upcoming from './tabs/Upcoming';
-import Completed from './tabs/Completed';
 
 const Tabs = () => {
 
     const tabs = ['Today', 'Upcoming', 'Completed'];
 
-    const [activeTab, setActiveTab] = useState(0);
+    const [activeTab, setActiveTab] = useState<number>(0);
 
     const handleTabPress = (index: number) => {
         setActiveTab(index);
@@ -18,8 +17,7 @@ const Tabs = () => {
 
     return (
         <View className="flex-1 w-full px-4 py-2">
-            {/* <View className='flex-col items-center justify-center w-full px-4'> */}
-            <View className="flex-row items-center justify-between w-full h-10 px-1 rounded-lg border-[0.5px] border-zinc-200 bg-zinc-100">
+            <View className="flex-row items-center justify-between w-full h-10 px-1 rounded-lg border-[0.5px] border-zinc-200 bg-zinc-100/80">
                 {tabs.map((tab, index) => (
                     <TouchableOpacity
                         key={index}
@@ -37,14 +35,13 @@ const Tabs = () => {
             </View>
             <View className='items-center justify-center flex-1'>
                 {activeTab === 0 ? (
-                    <Today />
+                    <Today activeTab={activeTab} />
                 ) : activeTab === 1 ? (
-                    <Upcoming />
+                    <Upcoming activeTab={activeTab} />
                 ) : (
-                    <Completed />
+                    <Completed activeTab={activeTab} />
                 )}
             </View>
-            {/* </View> */}
         </View>
     )
 }

@@ -30,6 +30,7 @@ yarn-error.*
 
 # local env files
 .env*.local
+.env
 
 # typescript
 *.tsbuildinfo
@@ -40,3 +41,9 @@ yarn-error.*
 expo-env.d.ts
 my-app.d.ts
 # @end expo-cli
+
+# dumy
+index.json
+com.svg
+auth.tsx
+todo.txt

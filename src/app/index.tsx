@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Home = () => {
     return (
-        <SafeAreaView className='flex-1 bg-white'>
+        <SafeAreaView className='flex-1 bg-white relative'>
 
             <StatusBar style='dark' />
 

@@ -1,16 +1,15 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import '@/styles/globals.css';
 import { useFonts } from 'expo-font';
-// import { Stack } from 'expo-router';
-import { createStackNavigator } from '@react-navigation/stack';
+import { Stack, useRouter } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-import Home from '.';
-import AddTask from './addTask';
-import '@/styles/globals.css';
-
-const Stack = createStackNavigator();
+import 'react-native-url-polyfill/auto';
+import { Loader } from '@/components';
+import { AuthProvider, useAuth } from '@/context/AuthProvider';
+import ToasterProvider from '@/context/ToasterProvider';
 
 export default function RootLayout() {
+
     const [loaded, error] = useFonts({
         'Light': require('@/src/assets/fonts/Inter-Light.ttf'),
         'Regular': require('@/src/assets/fonts/Inter-Regular.ttf'),
@@ -35,14 +34,46 @@ export default function RootLayout() {
         return null;
     }
 
-    return <RootLayoutNav />;
+    return (
+        <AuthProvider>
+            <ToasterProvider>
+                <RootLayoutNav />
+            </ToasterProvider>
+        </AuthProvider>
+    );
 }
 
 function RootLayoutNav() {
+
+    const router = useRouter();
+
+    const { isLoggedIn, isLoading } = useAuth();
+
+    useEffect(() => {
+        // NOTE: Here we are checking if the user is logged in or not with loading state
+        if (!isLoading) {
+            if (isLoggedIn) {
+                router.replace("/");
+            } else {
+                router.replace("/(auth)/signin");
+            }
+        }
+    }, [isLoggedIn, isLoading, router]);
+
+    if (isLoading) {
+        return <Loader />;
+    }
+
     return (
-        <Stack.Navigator screenOptions={{ animationTypeForReplace: 'push' }}>
-            <Stack.Screen name="index" component={Home} options={{ headerShown: false }} />
-            <Stack.Screen name="addTask" component={AddTask} options={{ headerShown: false, presentation: 'modal', gestureEnabled: true, gestureDirection: 'vertical', gestureResponseDistance: 800 }} />
-        </Stack.Navigator>
+        <Stack>
+            <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+            <Stack.Screen name="index" options={{ headerShown: false }} />
+            <Stack.Screen name="addTask" options={{ headerShown: false, gestureEnabled: true, gestureDirection: 'vertical', fullScreenGestureEnabled: true, animation: 'slide_from_bottom' }} />
+            <Stack.Screen name="details" options={{ headerShown: false, animation: 'slide_from_right' }} />
+            <Stack.Screen name="search" options={{ headerShown: false, animation: 'default' }} />
+            <Stack.Screen name="notifications" options={{ headerShown: false, animation: 'default' }} />
+            <Stack.Screen name="profile" options={{ headerShown: false, animation: 'slide_from_right' }} />
+            <Stack.Screen name="edit" options={{ headerShown: false, animation: 'slide_from_right' }} />
+        </Stack>
     );
 };
